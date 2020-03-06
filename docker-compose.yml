@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+    image: myvuejs:latest
+    ports:
+      - "8080:8080"
+    restart: always
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
