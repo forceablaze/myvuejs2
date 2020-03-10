@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "12.x"
+  },
   "scripts": {
     "dev": "babel-node build/devServer.js",
     "build": "webpack --config build/webpack.prod.conf.js",
