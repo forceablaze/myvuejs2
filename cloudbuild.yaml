@@ -17,4 +17,4 @@ steps:
   args: ['push', 'gcr.io/wired-axis-270905/myvuejs']
 
 images:
-- gcr.io/wired-axis-279905/myvuejs  
+- gcr.io/wired-axis-270905/myvuejs  
