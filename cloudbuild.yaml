@@ -7,3 +7,7 @@ steps:
 - name: node:12
   entrypoint: npm
   args: ['run', 'build']
+
+# Build the Docker image
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/wired-axis-270905/myvuejs', '.']
