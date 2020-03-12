@@ -6,4 +6,4 @@ steps:
 # Run build commands
 - name: node:12
   entrypoint: npm
-args: ['run', 'build']
+  args: ['run', 'build']
