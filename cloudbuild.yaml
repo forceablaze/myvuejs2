@@ -11,3 +11,10 @@ steps:
 # Build the Docker image
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/wired-axis-270905/myvuejs', '.']
+
+# Push the container image to Container Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/wired-axis-270905/myvuejs']
+
+images:
+- gcr.io/wired-axis-279905/myvuejs  
