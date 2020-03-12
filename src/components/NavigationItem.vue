@@ -1,7 +1,9 @@
 <template>
 
-  <li class='nav-item'>
-    <a class='nav-link dark-gray hk-focus-ring hover-bg-light-silver'
+  <li class='nav-item'
+    :class="{ active: isActive }"
+    @click="onClick">
+    <a class='nav-link dark-gray hover-bg-light-silver'
        :href='href'>
       {{ text }}
     </a> 
@@ -27,9 +29,21 @@
   padding-bottom: 5px;
 }
 
+a:active {
+ outline:none;
+ border-color:#79589f;
+ -webkit-box-shadow:0 0 0 2px rgba(157,112,208,0.4);
+ box-shadow:0 0 0 2px rgba(157,112,208,0.4)
+}
+
 a {
   background-color: transparent;
   font-size: 13px;
+}
+
+.sidebar .sidebar-content .active a {
+ font-weight:bold;
+ background:rgba(255,255,255,0.8)
 }
 
 </style>
@@ -40,13 +54,29 @@ export default {
   name: 'navigation-item',
 
   data: () => ({
-    text: 'Hello',
-    href: '#hello'
   }),
+
+  props: {
+    isActive: {
+      type: Boolean,
+      default: false,
+    },
+    text: String,
+    href: {
+      type: String,
+      default: "#hello"
+    }
+  },
 
   computed: {
   },
 
+  methods: {
+    onClick(e) {
+      this.$emit('click')
+      e.preventDefault()
+    }
+  }
 }
 
 </script>
